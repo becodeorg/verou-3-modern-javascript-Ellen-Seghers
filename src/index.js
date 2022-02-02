@@ -1,5 +1,6 @@
 //Added more function to this file
 import {createWeatherGraph} from "./extractWeatherData.js";
+import "./style.css";
 
 //In the home page the user can enter the city of his/her choice (think of the right HTML elements here)
     //Import key from config.js file

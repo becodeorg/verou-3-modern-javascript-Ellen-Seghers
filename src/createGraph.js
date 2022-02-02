@@ -48,8 +48,8 @@ export const showsGraphic = (chart, date, temperature, minTemperature, maxTemper
 }
 
 function addData(chart, label, data) {
-    chart.config.data.labels = label;
+    chart.data.labels = label;
     for(let i = 0; i < data.length; i++){
-        chart.config.data.datasets[i].data = data[i];
+        chart.data.datasets[i].data = data[i];
     }
 }
