@@ -34,8 +34,8 @@ export const createChart = (date, temperature, minTemperature, maxTemperature) =
                 }
             }
         }
-    })
-    newChart.update();
+    });
+    return newChart;
 }
 
 //Update the data
@@ -44,12 +44,12 @@ export const showsGraphic = (chart, date, temperature, minTemperature, maxTemper
     console.log(temperature);
     console.log(minTemperature);
     console.log(maxTemperature);
+    addData(chart, date, [temperature, minTemperature, maxTemperature]);
 }
 
 function addData(chart, label, data) {
-    chart.data.labels.push(label);
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(data);
-    });
-    chart.update();
+    chart.config.data.labels = label;
+    for(let i = 0; i < data.length; i++){
+        chart.config.data.datasets[i].data = data[i];
+    }
 }

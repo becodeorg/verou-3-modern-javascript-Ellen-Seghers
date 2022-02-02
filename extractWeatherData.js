@@ -13,7 +13,6 @@ let maxTemperature = [];
 //loop over array and display weather for each timestamp
 export const createWeatherGraph = (weatherData) => {
     resetDataArray();
-    let temperatureChart = createChart(date, temperature, minTemperature, maxTemperature);
     //create for loop that loops over data
     for(let i = 0; i < weatherData.length; i++){
         console.log(weatherData[i]);
@@ -22,9 +21,11 @@ export const createWeatherGraph = (weatherData) => {
         temperature.push(weatherData[i].main.temp);
         minTemperature.push(weatherData[i].main.temp_min);
         maxTemperature.push(weatherData[i].main.temp_max);
-        showsGraphic(temperatureChart, weatherData[i].dt_txt.split(":")[0]+"h", weatherData[i].main.temp, weatherData[i].main.temp_min, weatherData[i].main.temp_max);
     }
+    showsGraphic(temperatureChart, date, temperature, minTemperature, maxTemperature);
+    temperatureChart.update();
 }
+let temperatureChart = createChart(date, temperature, minTemperature, maxTemperature);
 
 //Clear the arrays
 const resetDataArray = () => {
