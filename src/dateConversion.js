@@ -4,7 +4,7 @@ export const createDateText = (timestamps) => {
     let textDate = [];
     for (let i = 0; i < timestamps.length; i++){
         const date = DateTime.fromSeconds(timestamps[i]);
-        textDate.push(date.toFormat("cccc dd'-'LL"));
+        textDate.push(date.toFormat("cccc dd'-'LL HH'h'"));
     }
     console.log(textDate);
     return textDate;
