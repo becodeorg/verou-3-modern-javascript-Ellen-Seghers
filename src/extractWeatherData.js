@@ -25,8 +25,8 @@ export const createWeatherGraph = (weatherData) => {
         minTemperature.push(weatherData[i].main.temp_min);
         maxTemperature.push(weatherData[i].main.temp_max);
     }
-    showsGraphic(temperatureChart, date, temperature, minTemperature, maxTemperature);
-    createDateText(timeStamps);
+    const updatedDates = createDateText(timeStamps);
+    showsGraphic(temperatureChart, /*date*/updatedDates, temperature, minTemperature, maxTemperature);
     temperatureChart.update();
 }
 let temperatureChart = createChart(date, temperature, minTemperature, maxTemperature);
